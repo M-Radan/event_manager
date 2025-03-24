@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event manager</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+</head>
+<body>
+
+
+    <header>
+        <h1>~EVENT MANAGER~</h1>
+    </header>
+
+    <main>
+
+        <div class="show-add-box">
+            <button type="submit" id="show-add-box"><b><i>➕ Add new Event ➕</i></b></button>
+        </div>
+
+
+        <div id="new-event" class="new-event">
+            <form id="event-form">
+                <label for="title">Event name: 📌</label>
+                <input type="text" id="title" name="title" placeholder="Event name:" required><br>
+                <label for="image">Image: 🖼️</label>
+                <input type="url" id="image" name="image" placeholder="image url..." required><br>
+                
+                <label for="description">Description: 📋</label>
+                <textarea placeholder="Event description:" rows="3" id="description" name="description" class="textarea"></textarea><br>
+                
+                <label for="location">Location: &#x1F4CD;</label>
+                <select id="location" name="location" required >
+                    <option value="" disabled selected></option>
+                </select><br>
+
+                
+                <div id="date-div">
+
+                    <label for="start-date">Start date: 🚀</label>
+                    <input id="start-date" name="start-date" readonly required><br>
+                    <button id="choose-start-date"  type="button">🚀Select📅</button><br>
+
+                    <div id="start-datepicker" class="datepicker-not-visible">
+                        <div id="header-datepicker">
+                            <input type="number" id="start-input-year" name="start-input-year"><br>
+                            <div id="month">
+                                <button type="button" id="start-previous-month">&#x1F448;</button>
+                                <select id="start-input-month">
+                                    <option value="0">January</option>
+                                    <option value="1">February</option>
+                                    <option value="2">March</option>
+                                    <option value="3">April</option>
+                                    <option value="4">May</option>
+                                    <option value="5">June</option>
+                                    <option value="6">July</option>
+                                    <option value="7">August</option>
+                                    <option value="8">September</option>
+                                    <option value="9">October</option>
+                                    <option value="10">November</option>
+                                    <option value="11">December</option>
+                                </select>
+                                <button type="button" id="start-next-month">&#x1F449;</button>
+                            </div>
+                        </div>
+    
+                        <div id="day">
+                            <span><i>Mon</i></span>
+                            <span><i>Tue</i></span>
+                            <span><i>Wen</i></span>
+                            <span><i>Thu</i></span>
+                            <span><i>Fri</i></span>
+                            <span><i><b>Sat</b></i></span>
+                            <span><i><b>Sun</b></i></span>
+                        </div>
+                        <div id="start-dates-option"></div>
+
+                        <button id="start-apply-button" disabled type="button">Save</button>
+    
+                    </div>
+
+                    <hr>
+
+                    <label for="end-date">End date: 🏁</label>
+                    <input id="end-date" readonly name="end-date" required><br>
+                    <button id="choose-end-date"  type="button" disabled>🏁Select📅</button><br>
+
+                    <div id="end-datepicker" class="datepicker-not-visible">
+                        <div id="header-datepicker">
+                            <input type="number" id="end-input-year" name="end-input-year"><br>
+                            <div id="month">
+                                <button type="button" id="end-previous-month">&#x1F448;</button>
+                                <select id="end-input-month">
+                                    <option value="0">January</option>
+                                    <option value="1">February</option>
+                                    <option value="2">March</option>
+                                    <option value="3">April</option>
+                                    <option value="4">May</option>
+                                    <option value="5">June</option>
+                                    <option value="6">July</option>
+                                    <option value="7">August</option>
+                                    <option value="8">September</option>
+                                    <option value="9">October</option>
+                                    <option value="10">November</option>
+                                    <option value="11">December</option>
+                                </select>
+                                <button type="button" id="end-next-month">&#x1F449;</button>
+                            </div>
+                        </div>
+    
+                        <div id="day">
+                            <span><i>Mon</i></span>
+                            <span><i>Tue</i></span>
+                            <span><i>Wen</i></span>
+                            <span><i>Thu</i></span>
+                            <span><i>Fri</i></span>
+                            <span><i><b>Sat</b></i></span>
+                            <span><i><b>Sun</b></i></span>
+                        </div>
+                        <div id="end-dates-option"></div>
+
+                        <button id="end-apply-button" disabled type="button">Save</button>
+    
+                    </div>
+                </div>
+                <br><button type="submit" id="submit-event" >SAVE</button>
+            </form>
+        </div>
+
+
+
+        
+        <div id="events-container">
+            <div id="events-header">
+                <h2>~ Current Events ~</h2>
+                <div id="filter">
+                    <label for="location-filter">Location filter: 🔍</label>
+                    <select id="location-filter" name="location-filter"></select><br>
+                </div><br>
+                <button type="button" id="delete-all">🧹DELETE ALL🗑️</button>
+            </div>
+        </div>
+        <div id="events-show-box">
+            
+         </div>
+    </main>
+
+    <footer><p>👨‍💻<i><b>Made by:</b> Mirko Radan</i>🫡</p></footer>
+
+</body>
+    <script src="script.js"></script>
+    <script src="country.js"></script>
+</html>
